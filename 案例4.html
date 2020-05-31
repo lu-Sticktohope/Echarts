@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="echarts.js"></script>
+    <script src="./jquery-3.4.1.js"></script>
+</head>
+   
+<body>
+    <div id="myChart" style="width: 100%;height:500px;"></div>
+    <!-- <canvas  style="width: 100%;height:500px;"></canvas> -->
+</body>
+
+</html>
+<script>
+ 
+    var myChart = echarts.init(document.getElementById('myChart'));
+    option = {
+    title: {
+        text: '新冠人口数量',
+        subtext: '纯属虚构'
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['2019年', '2020年']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value',
+        boundaryGap: [0, 0.01]
+    },
+    yAxis: {
+        type: 'category',
+        data: ['巴西', '印尼', '美国', '印度', '中国', '新冠人口数量(万)']
+    },
+    series: [
+        {
+            name: '2019年',
+            type: 'bar',
+            data: [18203, 1123489, 4429034, 2104970, 31744, 630230]
+        },
+        {
+            name: '2020年',
+            type: 'bar',
+            data: [19325, 1123438, 14431000, 11121594, 0, 681807]
+        }
+    ]
+};
+myChart.setOption(option);
+</script>

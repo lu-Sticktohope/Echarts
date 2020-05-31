@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./echarts.js"></script>
+</head>
+
+<body>
+    <div id="myChart" style="width: 600px;height:400px;"></div>
+</body>
+
+</html>
+<script>
+    var temp =[1,6,5,10,15,19]
+    var option = {
+        title:{
+            show:true,
+            text:"全栈专业成才记录",
+            subtext:"纯属虚构",
+            textAlign:"auto",
+            textVerticalAlign:"auto",
+            padding :10,
+            itemGap:5,
+            left:180,
+            textStyle:{
+              width:"100%",
+              color:"red",
+              textShadowBlur:20,
+              textShadowOffsetX:7,
+              textShadowOffsetY:28
+            },
+            subtextStyle:{
+               color:'red',
+               fontStyle :'italic',
+               fontWeight:"bolder"
+            }
+
+
+            
+        },
+    xAxis: {
+       
+        type: 'category',
+        data: ['1904', '1905', '1906', '1907', '1908', '1909']
+    },
+    legend:{
+        // data:"销量"
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [{
+        data:temp,
+        type: 'bar',
+        showBackground: true,
+        backgroundStyle: {
+            color: 'rgba(220, 220, 220, 0.8)'
+        }
+    }]
+};
+    var myChart = echarts.init(document.getElementById('myChart'));
+        myChart.setOption(option);
+    
+</script>
